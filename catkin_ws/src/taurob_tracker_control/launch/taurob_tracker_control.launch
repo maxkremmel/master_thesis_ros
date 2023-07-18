@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find taurob_tracker_control)/config/taurob_tracker_control.yaml" command="load"/>
+
+  <!-- load the controllers for joint states, flipper, arm-->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+	output="screen" ns="/taurob_tracker" args="joint_state_controller
+					  joint_flipper_position_controller"/> <!-- arm_traj_controller -->
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+	respawn="false" output="screen">
+    <remap from="/joint_states" to="/taurob_tracker/joint_states" />
+  </node>
+
+  <!-- transformer -->
+  <!-- <node name="gps_conv" pkg="gps_common" type="utm_odometry_node">
+    <remap from="odom" to="taurob_tracker/gps_odom"/>
+    <remap from="fix" to="taurob_tracker/fix" />
+  </node> -->
+
+  <!-- fuse odometry -->
+  <!-- <node pkg="robot_pose_ekf" type="robot_pose_ekf" name="robot_pose_ekf" output="screen">
+    <param name="output_frame" value="odom"/>
+    <param name="base_footprint_frame" value="base_link"/>
+    <param name="freq" value="30.0"/>
+    <param name="sensor_timeout" value="1.0"/>
+    <param name="odom_used" value="true"/>
+    <param name="imu_used" value="true"/>
+    <param name="vo_used" value="false"/>
+    <param name="gps_used" value="false"/>
+    <param name="debug" value="false"/>
+    <param name="self_diagnose" value="true"/>
+
+    <remap from="/imu_data" to="/taurob_tracker/imu/data" />
+   
+    <remap from="/vo" to="/taurob_tracker/gps_odom" />
+    
+    <remap from="/gps" to="/taurob_tracker/gps_odom" />
+  </node> -->
+
+  <!-- transform laserscan to base_link -->
+
+  <!-- KISS-ICP -->
+  <!-- <node pkg="kiss_icp" type="odometry_node" name="odometry_kiss" output="screen">
+    <remap from="pointcloud_topic" to="/velodyne_points"/>
+    <param name="odom_frame" value="odom"/>
+    <param name="child_frame" value="base_link"/>
+    <param name="pointcloud_frame" value="velodyne"/>
+    <param name="max_range" value="30.0"/>
+    <param name="min_range" value="0.3"/>
+    <param name="deskew" value="false"/>
+    <param name="voxel_size" value=""/>
+    <param name="max_points_per_voxel" value="20"/>
+    <param name="initial_threshold" value="1.0"/>
+    <param name="min_motion_th" value="0.1" />
+  </node> -->
+
+<node pkg="robot_localization" type="ekf_localization_node" name="robot_localization_ekf_node_odom" clear_params="true">
+  <param name="frequency" value="10." />
+  <param name="sensor_timeout" value="1.0" />
+  <param name="two_d_mode" value="true" />
+  <param name="publish_tf" value="true" />
+  <param name="map_frame" value="map" />
+  <param name="odom_frame" value="odom" />
+  <param name="base_link_frame" value="base_link" />
+  <param name="world_frame" value="odom" />
+  <param name="odom0" value="/odom" /> <!-- /odometry_node/odometry -->
+  <rosparam param="odom0_config"><!-- [false, false, false,
+                                  false, false, false,
+                                  true,  true,  false,
+                                  false, false, true,
+                                  false, false, false] -->
+                                  [false, false, false,
+                                  false, false, false,
+                                  true, false, false,
+                                  false, false, true,
+                                  false, false, false]
+                                  </rosparam>
+                                  
+  <param name="imu0" value="taurob_tracker/imu/data"/>
+  <rosparam param="imu0_config">[false, false, false,
+                               false, false, true,
+                               false, false, false,
+                               false, false, true,
+                               true, false, false]</rosparam>
+</node>
+
+</launch>

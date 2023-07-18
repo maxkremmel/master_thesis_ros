@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="test_world">
+    <include>
+      <uri>model://sun</uri>
+    </include>
+	
+	  <include>
+      <uri>model://test_world</uri>
+      <!-- <pose>0 0 1.5 45 0 0</pose> -->
+    </include>
+  </world>
+</sdf>
