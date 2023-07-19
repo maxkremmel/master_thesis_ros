@@ -1,0 +1,5 @@
+taurob_tracker_description
+/home/max/master_thesis_ros/catkin_ws/devel/.private/taurob_tracker_description/cmake.lock /home/max/master_thesis_ros/catkin_ws/devel/./cmake.lock
+/home/max/master_thesis_ros/catkin_ws/devel/.private/taurob_tracker_description/share/taurob_tracker_description/cmake/taurob_tracker_descriptionConfig.cmake /home/max/master_thesis_ros/catkin_ws/devel/share/taurob_tracker_description/cmake/taurob_tracker_descriptionConfig.cmake
+/home/max/master_thesis_ros/catkin_ws/devel/.private/taurob_tracker_description/share/taurob_tracker_description/cmake/taurob_tracker_descriptionConfig-version.cmake /home/max/master_thesis_ros/catkin_ws/devel/share/taurob_tracker_description/cmake/taurob_tracker_descriptionConfig-version.cmake
+/home/max/master_thesis_ros/catkin_ws/devel/.private/taurob_tracker_description/lib/pkgconfig/taurob_tracker_description.pc /home/max/master_thesis_ros/catkin_ws/devel/lib/pkgconfig/taurob_tracker_description.pc

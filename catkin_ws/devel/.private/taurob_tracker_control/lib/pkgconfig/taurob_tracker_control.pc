@@ -1,0 +1,8 @@
+prefix=/home/max/master_thesis_ros/catkin_ws/devel/.private/taurob_tracker_control
+
+Name: taurob_tracker_control
+Description: Description of taurob_tracker_control
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

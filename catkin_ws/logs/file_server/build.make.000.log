@@ -1,0 +1,44 @@
+[35m[1mScanning dependencies of target _file_server_generate_messages_check_deps_GetBinaryFile[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_nodejs[0m
+[35m[1mScanning dependencies of target _file_server_generate_messages_check_deps_SaveBinaryFile[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_py[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_eus[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target std_msgs_generate_messages_cpp[0m
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target _file_server_generate_messages_check_deps_SaveBinaryFile
+[  0%] Built target _file_server_generate_messages_check_deps_GetBinaryFile
+[35m[1mScanning dependencies of target file_server_generate_messages_eus[0m
+[35m[1mScanning dependencies of target file_server_generate_messages_lisp[0m
+[35m[1mScanning dependencies of target file_server_generate_messages_py[0m
+[35m[1mScanning dependencies of target file_server_generate_messages_cpp[0m
+[35m[1mScanning dependencies of target file_server_generate_messages_nodejs[0m
+[  7%] [34m[1mGenerating EusLisp manifest code for file_server[0m
+[ 14%] [34m[1mGenerating EusLisp code from file_server/SaveBinaryFile.srv[0m
+[ 21%] [34m[1mGenerating EusLisp code from file_server/GetBinaryFile.srv[0m
+[ 28%] [34m[1mGenerating Lisp code from file_server/GetBinaryFile.srv[0m
+[ 35%] [34m[1mGenerating C++ code from file_server/GetBinaryFile.srv[0m
+[ 42%] [34m[1mGenerating Javascript code from file_server/GetBinaryFile.srv[0m
+[ 50%] [34m[1mGenerating Python code from SRV file_server/GetBinaryFile[0m
+[ 57%] [34m[1mGenerating Lisp code from file_server/SaveBinaryFile.srv[0m
+[ 64%] [34m[1mGenerating Javascript code from file_server/SaveBinaryFile.srv[0m
+[ 71%] [34m[1mGenerating C++ code from file_server/SaveBinaryFile.srv[0m
+[ 78%] [34m[1mGenerating Python code from SRV file_server/SaveBinaryFile[0m
+[ 78%] Built target file_server_generate_messages_lisp
+[ 78%] Built target file_server_generate_messages_nodejs
+[ 85%] [34m[1mGenerating Python srv __init__.py for file_server[0m
+[ 85%] Built target file_server_generate_messages_cpp
+[35m[1mScanning dependencies of target file_server_gencpp[0m
+[ 85%] Built target file_server_gencpp
+[35m[1mScanning dependencies of target file_server[0m
+[ 92%] [32mBuilding CXX object CMakeFiles/file_server.dir/src/file_server.cpp.o[0m
+[ 92%] Built target file_server_generate_messages_py
+[ 92%] Built target file_server_generate_messages_eus
+[35m[1mScanning dependencies of target file_server_generate_messages[0m
+[ 92%] Built target file_server_generate_messages
+[100%] [32m[1mLinking CXX executable /home/max/master_thesis_ros/catkin_ws/devel/.private/file_server/lib/file_server/file_server[0m
+[100%] Built target file_server

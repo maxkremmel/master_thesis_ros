@@ -1,0 +1,4 @@
+[ 16%] Built target metrics
+[ 66%] Built target core
+[ 83%] Built target pipeline
+[100%] Built target odometry_node
