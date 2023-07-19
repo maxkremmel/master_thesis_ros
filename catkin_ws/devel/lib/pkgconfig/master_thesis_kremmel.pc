@@ -1,0 +1,1 @@
+/home/max/master_thesis_ros/catkin_ws/devel/.private/master_thesis_kremmel/lib/pkgconfig/master_thesis_kremmel.pc

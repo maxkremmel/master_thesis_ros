@@ -1,0 +1,1 @@
+/home/max/master_thesis_ros/catkin_ws/devel/.private/taurob_tracker_control/lib/pkgconfig/taurob_tracker_control.pc

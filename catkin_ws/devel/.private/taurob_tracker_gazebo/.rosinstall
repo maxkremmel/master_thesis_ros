@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/max/master_thesis_ros/catkin_ws/devel/.private/taurob_tracker_gazebo/setup.sh
