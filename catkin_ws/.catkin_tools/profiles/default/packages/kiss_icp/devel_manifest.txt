@@ -1,0 +1,6 @@
+kiss-icp/ros
+/home/max/master_thesis_ros/catkin_ws/devel/.private/kiss_icp/cmake.lock /home/max/master_thesis_ros/catkin_ws/devel/./cmake.lock
+/home/max/master_thesis_ros/catkin_ws/devel/.private/kiss_icp/share/kiss_icp/cmake/kiss_icpConfig.cmake /home/max/master_thesis_ros/catkin_ws/devel/share/kiss_icp/cmake/kiss_icpConfig.cmake
+/home/max/master_thesis_ros/catkin_ws/devel/.private/kiss_icp/share/kiss_icp/cmake/kiss_icpConfig-version.cmake /home/max/master_thesis_ros/catkin_ws/devel/share/kiss_icp/cmake/kiss_icpConfig-version.cmake
+/home/max/master_thesis_ros/catkin_ws/devel/.private/kiss_icp/lib/pkgconfig/kiss_icp.pc /home/max/master_thesis_ros/catkin_ws/devel/lib/pkgconfig/kiss_icp.pc
+/home/max/master_thesis_ros/catkin_ws/devel/.private/kiss_icp/lib/kiss_icp/odometry_node /home/max/master_thesis_ros/catkin_ws/devel/lib/kiss_icp/odometry_node

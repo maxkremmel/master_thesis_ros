@@ -1,0 +1,5 @@
+taurob_tracker_control
+/home/max/master_thesis_ros/catkin_ws/devel/.private/taurob_tracker_control/cmake.lock /home/max/master_thesis_ros/catkin_ws/devel/./cmake.lock
+/home/max/master_thesis_ros/catkin_ws/devel/.private/taurob_tracker_control/share/taurob_tracker_control/cmake/taurob_tracker_controlConfig.cmake /home/max/master_thesis_ros/catkin_ws/devel/share/taurob_tracker_control/cmake/taurob_tracker_controlConfig.cmake
+/home/max/master_thesis_ros/catkin_ws/devel/.private/taurob_tracker_control/share/taurob_tracker_control/cmake/taurob_tracker_controlConfig-version.cmake /home/max/master_thesis_ros/catkin_ws/devel/share/taurob_tracker_control/cmake/taurob_tracker_controlConfig-version.cmake
+/home/max/master_thesis_ros/catkin_ws/devel/.private/taurob_tracker_control/lib/pkgconfig/taurob_tracker_control.pc /home/max/master_thesis_ros/catkin_ws/devel/lib/pkgconfig/taurob_tracker_control.pc
