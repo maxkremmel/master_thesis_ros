@@ -1,4 +1,0 @@
-[35m[1mScanning dependencies of target LandMarkCornerDetector[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/LandMarkCornerDetector.dir/src/cornerDetection.cpp.o[0m
-[100%] [32m[1mLinking CXX executable /home/max/master_thesis_ros/catkin_ws/devel/.private/master_thesis_kremmel/lib/master_thesis_kremmel/LandMarkCornerDetector[0m
-[100%] Built target LandMarkCornerDetector
