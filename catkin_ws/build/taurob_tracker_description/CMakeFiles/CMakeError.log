@@ -1,21 +1,21 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
 Change Dir: /home/max/master_thesis_ros/catkin_ws/build/taurob_tracker_description/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_4c4b0/fast && /usr/bin/make -f CMakeFiles/cmTC_4c4b0.dir/build.make CMakeFiles/cmTC_4c4b0.dir/build
+Run Build Command(s):/usr/bin/make cmTC_1de4a/fast && /usr/bin/make -f CMakeFiles/cmTC_1de4a.dir/build.make CMakeFiles/cmTC_1de4a.dir/build
 make[1]: Entering directory '/home/max/master_thesis_ros/catkin_ws/build/taurob_tracker_description/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_4c4b0.dir/src.c.o
-/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_4c4b0.dir/src.c.o   -c /home/max/master_thesis_ros/catkin_ws/build/taurob_tracker_description/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_4c4b0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4c4b0.dir/link.txt --verbose=1
-/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_4c4b0.dir/src.c.o  -o cmTC_4c4b0 
-/usr/bin/ld: CMakeFiles/cmTC_4c4b0.dir/src.c.o: in function `main':
+Building C object CMakeFiles/cmTC_1de4a.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_1de4a.dir/src.c.o   -c /home/max/master_thesis_ros/catkin_ws/build/taurob_tracker_description/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_1de4a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1de4a.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_1de4a.dir/src.c.o  -o cmTC_1de4a 
+/usr/bin/ld: CMakeFiles/cmTC_1de4a.dir/src.c.o: in function `main':
 src.c:(.text+0x46): undefined reference to `pthread_create'
 /usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
 /usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_4c4b0.dir/build.make:87: cmTC_4c4b0] Error 1
+make[1]: *** [CMakeFiles/cmTC_1de4a.dir/build.make:87: cmTC_1de4a] Error 1
 make[1]: Leaving directory '/home/max/master_thesis_ros/catkin_ws/build/taurob_tracker_description/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_4c4b0/fast] Error 2
+make: *** [Makefile:121: cmTC_1de4a/fast] Error 2
 
 
 Source file was:
@@ -41,18 +41,18 @@ int main(void)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/max/master_thesis_ros/catkin_ws/build/taurob_tracker_description/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_48f93/fast && /usr/bin/make -f CMakeFiles/cmTC_48f93.dir/build.make CMakeFiles/cmTC_48f93.dir/build
+Run Build Command(s):/usr/bin/make cmTC_e94af/fast && /usr/bin/make -f CMakeFiles/cmTC_e94af.dir/build.make CMakeFiles/cmTC_e94af.dir/build
 make[1]: Entering directory '/home/max/master_thesis_ros/catkin_ws/build/taurob_tracker_description/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_48f93.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_48f93.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_48f93
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_48f93.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_48f93.dir/CheckFunctionExists.c.o  -o cmTC_48f93  -lpthreads 
+Building C object CMakeFiles/cmTC_e94af.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_e94af.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e94af
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e94af.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_e94af.dir/CheckFunctionExists.c.o  -o cmTC_e94af  -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_48f93.dir/build.make:87: cmTC_48f93] Error 1
+make[1]: *** [CMakeFiles/cmTC_e94af.dir/build.make:87: cmTC_e94af] Error 1
 make[1]: Leaving directory '/home/max/master_thesis_ros/catkin_ws/build/taurob_tracker_description/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_48f93/fast] Error 2
+make: *** [Makefile:121: cmTC_e94af/fast] Error 2
 
 
 

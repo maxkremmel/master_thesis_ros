@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "*.ipp": "cpp"
+    },
+    "cmake.sourceDirectory": "/home/max/master_thesis_ros/catkin_ws/src/master_thesis_kremmel",
+    "python.autoComplete.extraPaths": [
+        "/home/max/master_thesis_ros/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/max/master_thesis_ros/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ]
+}

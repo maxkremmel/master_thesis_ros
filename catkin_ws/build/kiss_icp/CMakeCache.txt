@@ -401,7 +401,7 @@ RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
 SETUPTOOLS_DEB_LAYOUT:BOOL=ON
 
 //Name of the computer/site where compile is being run
-SITE:STRING=max-desktop
+SITE:STRING=pc-alpstrasse
 
 //Generate the install target.
 SOPHUS_INSTALL:BOOL=OFF
