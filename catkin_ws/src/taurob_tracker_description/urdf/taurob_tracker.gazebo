@@ -3,10 +3,25 @@
 
   <!-- ros_control plugin -->
   <gazebo>
-    <plugin name="gazebo_ros_control_select_joints" filename="libgazebo_ros_control_select_joints.so">
+    <plugin name="gazebo_ros_control_select_joints"
+      filename="libgazebo_ros_control_select_joints.so">
       <robotNamespace>/taurob_tracker</robotNamespace>
       <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
       <joint>flipper_joint_front</joint>
+    </plugin>
+  </gazebo>
+
+  <!-- ground truth plugin -->
+  <gazebo>
+    <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>50.0</updateRate>
+      <bodyName>base_link</bodyName>
+      <topicName>ground_truth/state</topicName>
+      <gaussianNoise>0.01</gaussianNoise>
+      <frameName>world</frameName>
+      <xyzOffset>0 0 0</xyzOffset>
+      <rpyOffset>0 0 0</rpyOffset>
     </plugin>
   </gazebo>
 
@@ -90,7 +105,7 @@
   <!-- Flipper back link -->
   <gazebo reference="flipper_link_back">
     <mu1>0.0</mu1>
-    <mu2>0.0</mu2>    
+    <mu2>0.0</mu2>
     <kp>1000000.0</kp>
     <kd>100.0</kd>
     <minDepth>0.001</minDepth>

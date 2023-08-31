@@ -21,16 +21,24 @@ catkin_package(
                    pcl_conversions
   )
 
-include_directories(${catkin_INCLUDE_DIRS})
-include_directories(${PCL_INCLUDE_DIRS})
-include_directories(${VTK_INCLUDE_DIRS})
-include_directories(${EIGEN3_INCLUDE_DIRS})
+include_directories(
+  ${catkin_INCLUDE_DIRS}
+  ${PCL_INCLUDE_DIRS}
+  ${VTK_INCLUDE_DIRS}
+  ${EIGEN3_INCLUDE_DIRS}
+)
+
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 
-add_executable(LandMarkCornerDetector src/cornerDetection.cpp)
-target_link_libraries(LandMarkCornerDetector ${catkin_LIBRARIES} ${PCL_LIBRARIES})
+add_executable(TransformLaserScan src/transformLaserScan.cpp)
+target_link_libraries(TransformLaserScan ${catkin_LIBRARIES} ${PCL_LIBRARIES})
 
+add_executable(LandmarkProcessor src/landmarkProcessing.cpp)
+target_link_libraries(LandmarkProcessor ${catkin_LIBRARIES} ${PCL_LIBRARIES})
+
+add_executable(EKFSlam src/EKFslam.cpp)
+target_link_libraries(EKFSlam ${catkin_LIBRARIES} ${EIGEN3_LIBRARIES})
 
 #add_executable(PubToCmdVel src/pubToCmdVel.cpp)
 #target_link_libraries(PubToCmdVel ${catkin_LIBRARIES})

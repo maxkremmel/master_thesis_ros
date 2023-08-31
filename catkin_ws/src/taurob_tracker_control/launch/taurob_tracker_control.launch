@@ -41,24 +41,7 @@
     <remap from="/gps" to="/taurob_tracker/gps_odom" />
   </node> -->
 
-  <!-- transform laserscan to base_link -->
-
-  <!-- KISS-ICP -->
-  <!-- <node pkg="kiss_icp" type="odometry_node" name="odometry_kiss" output="screen">
-    <remap from="pointcloud_topic" to="/velodyne_points"/>
-    <param name="odom_frame" value="odom"/>
-    <param name="child_frame" value="base_link"/>
-    <param name="pointcloud_frame" value="velodyne"/>
-    <param name="max_range" value="30.0"/>
-    <param name="min_range" value="0.3"/>
-    <param name="deskew" value="false"/>
-    <param name="voxel_size" value=""/>
-    <param name="max_points_per_voxel" value="20"/>
-    <param name="initial_threshold" value="1.0"/>
-    <param name="min_motion_th" value="0.1" />
-  </node> -->
-
-<node pkg="robot_localization" type="ekf_localization_node" name="robot_localization_ekf_node_odom" clear_params="true">
+<!-- <node pkg="robot_localization" type="ekf_localization_node" name="robot_localization_ekf_node_odom" clear_params="true">
   <param name="frequency" value="10." />
   <param name="sensor_timeout" value="1.0" />
   <param name="two_d_mode" value="true" />
@@ -67,12 +50,8 @@
   <param name="odom_frame" value="odom" />
   <param name="base_link_frame" value="base_link" />
   <param name="world_frame" value="odom" />
-  <param name="odom0" value="/odom" /> <!-- /odometry_node/odometry -->
-  <rosparam param="odom0_config"><!-- [false, false, false,
-                                  false, false, false,
-                                  true,  true,  false,
-                                  false, false, true,
-                                  false, false, false] -->
+  <param name="odom0" value="/odom" /> 
+  <rosparam param="odom0_config">
                                   [false, false, false,
                                   false, false, false,
                                   true, false, false,
@@ -86,6 +65,6 @@
                                false, false, false,
                                false, false, true,
                                true, false, false]</rosparam>
-</node>
+</node> -->
 
 </launch>

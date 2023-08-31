@@ -46,7 +46,6 @@
   <!-- Infrared Camera Plugin -->
   <xacro:include filename="$(find taurob_tracker_description)/urdf/flir_a35_camera.urdf.xacro"/>
 
-
   <link name="base_link"/>
 
   <joint name="chassis_joint" type="fixed">

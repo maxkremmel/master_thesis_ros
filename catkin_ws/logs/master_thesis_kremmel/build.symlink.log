@@ -1,4 +1,6 @@
 Symlinking /home/max/master_thesis_ros/catkin_ws/devel/share/master_thesis_kremmel/cmake/master_thesis_kremmelConfig-version.cmake
 Symlinking /home/max/master_thesis_ros/catkin_ws/devel/share/master_thesis_kremmel/cmake/master_thesis_kremmelConfig.cmake
-Symlinking /home/max/master_thesis_ros/catkin_ws/devel/lib/master_thesis_kremmel/LandMarkCornerDetector
+Symlinking /home/max/master_thesis_ros/catkin_ws/devel/lib/master_thesis_kremmel/EKFSlam
+Symlinking /home/max/master_thesis_ros/catkin_ws/devel/lib/master_thesis_kremmel/LandmarkProcessor
+Symlinking /home/max/master_thesis_ros/catkin_ws/devel/lib/master_thesis_kremmel/TransformLaserScan
 Symlinking /home/max/master_thesis_ros/catkin_ws/devel/lib/pkgconfig/master_thesis_kremmel.pc

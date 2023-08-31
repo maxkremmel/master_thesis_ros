@@ -1,16 +1,18 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="file_server"       default="true"/>
-  <arg name="lio_sam"           default="false"/>
-  <arg name="teleop"            default="true"/>
-  <arg name="joy_teleop"        default="false"/>
-  <arg name="gui"               default="false"/>
-  <arg name="rviz"              default="true"/>
-  <arg name="gpu"               default="true"/>
-  <arg name="x_pos"             default="-3.5"/>
-  <arg name="y_pos"             default="8"/>
-  <arg name="yaw"               default="-1.57"/>
-  <arg name="path_to_world"     default="$(find master_thesis_kremmel)/worlds/test_world.world"/>
+  <arg name="file_server" default="true" />
+  <arg name="lio_sam" default="false" />
+  <arg name="kiss_icp" default="true" />
+  <arg name="teleop" default="true" />
+  <arg name="joy_teleop" default="false" />
+  <arg name="gui" default="true" />
+  <arg name="rviz" default="true" />
+  <arg name="gpu" default="true" />
+  <arg name="x_pos" default="0" />
+  <arg name="y_pos" default="0" />
+  <arg name="yaw" default="0" />
+  <arg name="path_to_world" default="$(find master_thesis_kremmel)/worlds/test_world.world" />
+
   <!-- PS4 Controller arguments -->
   <arg name="addr" default="84:30:95:1B:29:26" />
   <arg name="use_standard_msgs" default="true" />
@@ -18,17 +20,17 @@
 
   <group if="$(arg file_server)">
     <include file="$(find file_server)/launch/ros_sharp_communication.launch">
-		  <arg name="port" value="9090" />
-	  </include>
+      <arg name="port" value="9090" />
+    </include>
   </group>
 
   <!-- Start DualShock4 Node -->
   <group if="$(arg joy_teleop)">
     <node pkg="ds4_driver" type="ds4_driver_node.py" name="ds4_driver" output="screen">
-        <rosparam command="load" file="$(find ds4_driver)/config/params.yaml" />
-        <param name="device_addr" value="$(arg addr)" />
-        <param name="use_standard_msgs" value="$(arg use_standard_msgs)" />
-        <param name="autorepeat_rate" value="$(arg autorepeat_rate)" if="$(arg use_standard_msgs)" />
+      <rosparam command="load" file="$(find ds4_driver)/config/params.yaml" />
+      <param name="device_addr" value="$(arg addr)" />
+      <param name="use_standard_msgs" value="$(arg use_standard_msgs)" />
+      <param name="autorepeat_rate" value="$(arg autorepeat_rate)" if="$(arg use_standard_msgs)" />
     </node>
   </group>
 
@@ -38,32 +40,51 @@
     <include file="$(find lio_sam)/launch/run.launch"></include>
   </group>
 
+  <group if="$(arg kiss_icp)">
+    <include file="$(find kiss_icp)/launch/odometry.launch">
+      <arg name="visualize" default="false" />
+      <arg name="odom_frame" default="odom" />
+      <arg name="child_frame" default="base_link" />
+      <arg name="topic" default="transformed_laserscan" />
+    </include>
+  </group>
+  <!-- Start gazebo simulation -->
   <include file="$(find taurob_tracker_gazebo)/launch/taurob_tracker_indoor_world.launch">
-    <arg name="world_name2" value="$(arg path_to_world)"/>
-    <arg name="gui" value="$(arg gui)"/>
-    <arg name="gpu" value="$(arg gpu)"/>
-    <arg name="x_pos"   value="$(arg x_pos)"/>
-    <arg name="y_pos"   value="$(arg y_pos)"/>
-    <arg name="yaw"     value="$(arg yaw)"/>
+    <arg name="world_name2" value="$(arg path_to_world)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="gpu" value="$(arg gpu)" />
+    <arg name="x_pos" value="$(arg x_pos)" />
+    <arg name="y_pos" value="$(arg y_pos)" />
+    <arg name="yaw" value="$(arg yaw)" />
   </include>
 
   <!-- Start Controller -->
-  <include file="$(find taurob_tracker_control)/launch/taurob_tracker_control.launch"/>
+  <include file="$(find taurob_tracker_control)/launch/taurob_tracker_control.launch" />
 
-  <!--Start Teleop -->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_odom"
+    args="0 0 0 0 0 0 world odom" />
+
+  <!--Start
+  Teleop -->
   <group if="$(arg teleop)">
-    <node name="taurob_teleop_node" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen" launch-prefix="xterm -e">
+    <node name="taurob_teleop_node" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py"
+      output="screen" launch-prefix="xterm -e">
       <remap from="/cmd_vel" to="/taurob_tracker/cmd_vel_raw" />
     </node>
   </group>
 
   <!-- Start Rviz -->
   <group if="$(arg rviz)">
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find master_thesis_kremmel)/config/rviz.rviz"/>
+    <node name="rviz" pkg="rviz" type="rviz"
+      args="-d $(find master_thesis_kremmel)/config/rviz.rviz" />
   </group>
 
   <!-- Start Nodes -->
-  <node name="LandMarkCornerDetector"     type="LandMarkCornerDetector"   pkg="master_thesis_kremmel" output="screen" /> 
+  <node name="TransformLaserScan" type="TransformLaserScan" pkg="master_thesis_kremmel"
+    output="screen" />
+  <node name="LandmarkProcessor" type="LandmarkProcessor" pkg="master_thesis_kremmel"
+    output="screen" />
+  <node name="EKFSlam" type="EKFSlam" pkg="master_thesis_kremmel" output="screen" />
   <!-- <node name="PubToCmdVel" type="PubToCmdVel" pkg="master_thesis_kremmel" output="screen" /> -->
 
 </launch>
