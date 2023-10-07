@@ -4,6 +4,7 @@
 #include <sensor_msgs/point_cloud2_iterator.h>
 #include <pcl_ros/point_cloud.h>
 #include <pcl/point_types.h>
+#include <pcl/filters/voxel_grid.h>
 #include <pcl/visualization/pcl_visualizer.h>
 #include <pcl_conversions/pcl_conversions.h>
 #include <pcl/visualization/cloud_viewer.h>
@@ -22,9 +23,9 @@ public:
     {
         LMsubscriber = n.subscribe<sensor_msgs::PointCloud2>("/new_landmark", 10, &NewLandMarkProcessing::newLandMarkCallback, this);
         LMpublisher = n.advertise<sensor_msgs::PointCloud2>("/stored_landmarks", 1000);
-        viewer_timer = n.createTimer(ros::Duration(0.1), &NewLandMarkProcessing::timerCB, this);
+        /* viewer_timer = n.createTimer(ros::Duration(0.1), &NewLandMarkProcessing::timerCB, this);
         pcl::PointCloud<pcl::PointXYZ>::Ptr emptyCloud_ptr(new pcl::PointCloud<pcl::PointXYZ>);
-        viewer = createViewer(emptyCloud_ptr);
+        viewer = createViewer(emptyCloud_ptr); */
 
         // LM's aus JSON Datei einlesen
         std::string packagePath = ros::package::getPath("master_thesis_kremmel");
@@ -45,8 +46,8 @@ public:
         landmark.point_step = 12;
         landmark.is_bigendian = true;
         landmark.is_dense = false;
-        
-        ros::Duration(2).sleep(); // Warten bis rviz geladen ist 
+
+        ros::Duration(2).sleep(); // Warten bis rviz geladen ist
 
         publishLandMarks(stored_landmarks); // Alle bereits gespeicherten LM's in rviz visualisieren
     }
@@ -89,7 +90,13 @@ public:
         ROS_INFO("++++++++++++++++++   Got new LandMark   +++++++++++++++++");
         pcl::PointCloud<pcl::PointXYZ>::Ptr pcl_cloud(new pcl::PointCloud<pcl::PointXYZ>);
         pcl::fromROSMsg(*input, *pcl_cloud);
-        viewer->updatePointCloud<pcl::PointXYZ>(pcl_cloud, "Landmark");
+        /* viewer->updatePointCloud<pcl::PointXYZ>(pcl_cloud, "Landmark"); */
+
+        // Downsample of LM Pointcloud:
+        pcl::VoxelGrid<pcl::PointXYZ> sor;
+        sor.setInputCloud(pcl_cloud);
+        sor.setLeafSize(0.1f, 0.1f, 0.1f);
+        sor.filter(*pcl_cloud);
 
         // Store LM:
         // Calculate Pose of LM using mean of XYZ coordinates off all poits
@@ -97,19 +104,33 @@ public:
         float y_mean = 0;
         float z_mean = 0;
         json lm_pointcloud;
-        for (int i = 0; i < pcl_cloud->points.size(); i++)
-        {
-            x_mean += pcl_cloud->points[i].x;
-            y_mean += pcl_cloud->points[i].y;
-            z_mean += pcl_cloud->points[i].z;
 
-            json point = {pcl_cloud->points[i].x, pcl_cloud->points[i].y, pcl_cloud->points[i].z};
-            lm_pointcloud.push_back(point);
+        for (pcl::PointCloud<pcl::PointXYZ>::iterator it = pcl_cloud->begin(); it != pcl_cloud->end(); it++)
+        {
+            if (it->z < 0.1)
+            {
+                // Skip this point because its part of the floor
+            }
+            else
+            {
+                x_mean += it->x;
+                y_mean += it->y;
+                z_mean += it->z;
+
+                json point = {it->x, it->y, it->z};
+                lm_pointcloud.push_back(point);
+            }
+
             // ToDo: Eventuell noch Punktwolke komprimieren
         }
-        x_mean /= pcl_cloud->points.size();
-        y_mean /= pcl_cloud->points.size();
-        z_mean /= pcl_cloud->points.size();
+        if(lm_pointcloud.empty()){
+            std::cout << "New Landmark only consists out of floor... not storing LM" << std::endl;
+            return;
+        }
+        
+        x_mean /= lm_pointcloud.size();
+        y_mean /= lm_pointcloud.size();
+        z_mean /= lm_pointcloud.size();
 
         std::cout << "Looking if LM is allready initialized" << std::endl;
         // iterate through LM's
@@ -158,7 +179,7 @@ public:
         }
     }
 
-    void timerCB(const ros::TimerEvent &)
+    /* void timerCB(const ros::TimerEvent &)
     {
         if (!viewer->wasStopped())
         {
@@ -180,14 +201,14 @@ public:
         viewer->addCoordinateSystem(1.0);
         viewer->initCameraParameters();
         return (viewer);
-    }
+    } */
 
 private:
     ros::NodeHandle n;
-    ros::Timer viewer_timer;
+    /* ros::Timer viewer_timer; */
     ros::Subscriber LMsubscriber;
     ros::Publisher LMpublisher;
-    pcl::visualization::PCLVisualizer::Ptr viewer;
+    /* pcl::visualization::PCLVisualizer::Ptr viewer; */
     std::string jsonPath;
     json stored_landmarks;
     sensor_msgs::PointCloud2 landmark;

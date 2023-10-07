@@ -326,6 +326,7 @@ CMakeFiles/roboticsgroup_upatras_gazebo_mimic_joint_plugin.dir/src/mimic_joint_p
 CMakeFiles/roboticsgroup_upatras_gazebo_mimic_joint_plugin.dir/src/mimic_joint_plugin.cpp.o: /usr/include/ignition/math6/gz/math/Matrix3.hh
 CMakeFiles/roboticsgroup_upatras_gazebo_mimic_joint_plugin.dir/src/mimic_joint_plugin.cpp.o: /usr/include/ignition/math6/gz/math/Matrix4.hh
 CMakeFiles/roboticsgroup_upatras_gazebo_mimic_joint_plugin.dir/src/mimic_joint_plugin.cpp.o: /usr/include/ignition/math6/gz/math/Matrix6.hh
+CMakeFiles/roboticsgroup_upatras_gazebo_mimic_joint_plugin.dir/src/mimic_joint_plugin.cpp.o: /usr/include/ignition/math6/gz/math/MecanumDriveOdometry.hh
 CMakeFiles/roboticsgroup_upatras_gazebo_mimic_joint_plugin.dir/src/mimic_joint_plugin.cpp.o: /usr/include/ignition/math6/gz/math/MovingWindowFilter.hh
 CMakeFiles/roboticsgroup_upatras_gazebo_mimic_joint_plugin.dir/src/mimic_joint_plugin.cpp.o: /usr/include/ignition/math6/gz/math/OrientedBox.hh
 CMakeFiles/roboticsgroup_upatras_gazebo_mimic_joint_plugin.dir/src/mimic_joint_plugin.cpp.o: /usr/include/ignition/math6/gz/math/PID.hh

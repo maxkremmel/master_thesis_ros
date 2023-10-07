@@ -73,7 +73,10 @@
         "typeinfo": "cpp",
         "valarray": "cpp",
         "variant": "cpp",
-        "forward_list": "cpp"
+        "forward_list": "cpp",
+        "core": "cpp",
+        "dense": "cpp",
+        "numericaldiff": "cpp"
     },
     "cmake.sourceDirectory": "/home/max/master_thesis_ros/catkin_ws/src/master_thesis_kremmel",
     "python.autoComplete.extraPaths": [

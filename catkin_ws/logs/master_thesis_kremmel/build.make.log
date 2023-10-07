@@ -1,6 +1,8 @@
-[35m[1mScanning dependencies of target EKFSlam[0m
-[ 33%] Built target TransformLaserScan
-[ 50%] [32mBuilding CXX object CMakeFiles/EKFSlam.dir/src/EKFslam.cpp.o[0m
-[ 83%] Built target LandmarkProcessor
-[100%] [32m[1mLinking CXX executable /home/max/master_thesis_ros/catkin_ws/devel/.private/master_thesis_kremmel/lib/master_thesis_kremmel/EKFSlam[0m
-[100%] Built target EKFSlam
+[35m[1mScanning dependencies of target PredictionTest[0m
+[ 20%] Built target Evaluator
+[ 40%] [32mBuilding CXX object CMakeFiles/PredictionTest.dir/src/prediction_test.cpp.o[0m
+[ 50%] Built target TransformLaserScan
+[ 70%] Built target EKFSlam
+[ 90%] Built target LandmarkProcessor
+[100%] [32m[1mLinking CXX executable /home/max/master_thesis_ros/catkin_ws/devel/.private/master_thesis_kremmel/lib/master_thesis_kremmel/PredictionTest[0m
+[100%] Built target PredictionTest

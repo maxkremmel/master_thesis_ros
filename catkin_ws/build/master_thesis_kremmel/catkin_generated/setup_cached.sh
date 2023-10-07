@@ -8,6 +8,8 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/max/master_thesis_ros/catkin_ws/devel/.private/master_thesis_kremmel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/max/master_thesis_ros/catkin_ws/devel/.private/master_thesis_kremmel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/max/master_thesis_ros/catkin_ws/devel/.private/master_thesis_kremmel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/max/master_thesis_ros/catkin_ws/build/master_thesis_kremmel'
 export ROSLISP_PACKAGE_DIRECTORIES="/home/max/master_thesis_ros/catkin_ws/devel/.private/master_thesis_kremmel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/max/master_thesis_ros/catkin_ws/src/master_thesis_kremmel:$ROS_PACKAGE_PATH"

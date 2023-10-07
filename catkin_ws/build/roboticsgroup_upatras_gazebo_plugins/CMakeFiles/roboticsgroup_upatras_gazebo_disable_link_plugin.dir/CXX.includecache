@@ -7017,6 +7017,8 @@ gz/math/Matrix4.hh
 -
 gz/math/Matrix6.hh
 -
+gz/math/MecanumDriveOdometry.hh
+-
 gz/math/MovingWindowFilter.hh
 -
 gz/math/OrientedBox.hh
@@ -7380,6 +7382,18 @@ gz/math/config.hh
 gz/math/Helpers.hh
 -
 gz/math/Matrix3.hh
+-
+
+/usr/include/ignition/math6/gz/math/MecanumDriveOdometry.hh
+chrono
+-
+memory
+-
+gz/math/Angle.hh
+-
+gz/math/Export.hh
+-
+gz/math/config.hh
 -
 
 /usr/include/ignition/math6/gz/math/MovingWindowFilter.hh

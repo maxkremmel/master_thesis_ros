@@ -168,6 +168,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named PredictionTest
+
+# Build rule for target.
+PredictionTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 PredictionTest
+.PHONY : PredictionTest
+
+# fast build rule for target.
+PredictionTest/fast:
+	$(MAKE) -f CMakeFiles/PredictionTest.dir/build.make CMakeFiles/PredictionTest.dir/build
+.PHONY : PredictionTest/fast
+
+#=============================================================================
+# Target rules for targets named Evaluator
+
+# Build rule for target.
+Evaluator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Evaluator
+.PHONY : Evaluator
+
+# fast build rule for target.
+Evaluator/fast:
+	$(MAKE) -f CMakeFiles/Evaluator.dir/build.make CMakeFiles/Evaluator.dir/build
+.PHONY : Evaluator/fast
+
+#=============================================================================
 # Target rules for targets named EKFSlam
 
 # Build rule for target.
@@ -1337,32 +1363,59 @@ gtest/fast:
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
-src/EKFslam.o: src/EKFslam.cpp.o
+src/ekfSlam.o: src/ekfSlam.cpp.o
 
-.PHONY : src/EKFslam.o
+.PHONY : src/ekfSlam.o
 
 # target to build an object file
-src/EKFslam.cpp.o:
-	$(MAKE) -f CMakeFiles/EKFSlam.dir/build.make CMakeFiles/EKFSlam.dir/src/EKFslam.cpp.o
-.PHONY : src/EKFslam.cpp.o
+src/ekfSlam.cpp.o:
+	$(MAKE) -f CMakeFiles/EKFSlam.dir/build.make CMakeFiles/EKFSlam.dir/src/ekfSlam.cpp.o
+.PHONY : src/ekfSlam.cpp.o
 
-src/EKFslam.i: src/EKFslam.cpp.i
+src/ekfSlam.i: src/ekfSlam.cpp.i
 
-.PHONY : src/EKFslam.i
+.PHONY : src/ekfSlam.i
 
 # target to preprocess a source file
-src/EKFslam.cpp.i:
-	$(MAKE) -f CMakeFiles/EKFSlam.dir/build.make CMakeFiles/EKFSlam.dir/src/EKFslam.cpp.i
-.PHONY : src/EKFslam.cpp.i
+src/ekfSlam.cpp.i:
+	$(MAKE) -f CMakeFiles/EKFSlam.dir/build.make CMakeFiles/EKFSlam.dir/src/ekfSlam.cpp.i
+.PHONY : src/ekfSlam.cpp.i
 
-src/EKFslam.s: src/EKFslam.cpp.s
+src/ekfSlam.s: src/ekfSlam.cpp.s
 
-.PHONY : src/EKFslam.s
+.PHONY : src/ekfSlam.s
 
 # target to generate assembly for a file
-src/EKFslam.cpp.s:
-	$(MAKE) -f CMakeFiles/EKFSlam.dir/build.make CMakeFiles/EKFSlam.dir/src/EKFslam.cpp.s
-.PHONY : src/EKFslam.cpp.s
+src/ekfSlam.cpp.s:
+	$(MAKE) -f CMakeFiles/EKFSlam.dir/build.make CMakeFiles/EKFSlam.dir/src/ekfSlam.cpp.s
+.PHONY : src/ekfSlam.cpp.s
+
+src/evaluator.o: src/evaluator.cpp.o
+
+.PHONY : src/evaluator.o
+
+# target to build an object file
+src/evaluator.cpp.o:
+	$(MAKE) -f CMakeFiles/Evaluator.dir/build.make CMakeFiles/Evaluator.dir/src/evaluator.cpp.o
+.PHONY : src/evaluator.cpp.o
+
+src/evaluator.i: src/evaluator.cpp.i
+
+.PHONY : src/evaluator.i
+
+# target to preprocess a source file
+src/evaluator.cpp.i:
+	$(MAKE) -f CMakeFiles/Evaluator.dir/build.make CMakeFiles/Evaluator.dir/src/evaluator.cpp.i
+.PHONY : src/evaluator.cpp.i
+
+src/evaluator.s: src/evaluator.cpp.s
+
+.PHONY : src/evaluator.s
+
+# target to generate assembly for a file
+src/evaluator.cpp.s:
+	$(MAKE) -f CMakeFiles/Evaluator.dir/build.make CMakeFiles/Evaluator.dir/src/evaluator.cpp.s
+.PHONY : src/evaluator.cpp.s
 
 src/landmarkProcessing.o: src/landmarkProcessing.cpp.o
 
@@ -1390,6 +1443,33 @@ src/landmarkProcessing.s: src/landmarkProcessing.cpp.s
 src/landmarkProcessing.cpp.s:
 	$(MAKE) -f CMakeFiles/LandmarkProcessor.dir/build.make CMakeFiles/LandmarkProcessor.dir/src/landmarkProcessing.cpp.s
 .PHONY : src/landmarkProcessing.cpp.s
+
+src/prediction_test.o: src/prediction_test.cpp.o
+
+.PHONY : src/prediction_test.o
+
+# target to build an object file
+src/prediction_test.cpp.o:
+	$(MAKE) -f CMakeFiles/PredictionTest.dir/build.make CMakeFiles/PredictionTest.dir/src/prediction_test.cpp.o
+.PHONY : src/prediction_test.cpp.o
+
+src/prediction_test.i: src/prediction_test.cpp.i
+
+.PHONY : src/prediction_test.i
+
+# target to preprocess a source file
+src/prediction_test.cpp.i:
+	$(MAKE) -f CMakeFiles/PredictionTest.dir/build.make CMakeFiles/PredictionTest.dir/src/prediction_test.cpp.i
+.PHONY : src/prediction_test.cpp.i
+
+src/prediction_test.s: src/prediction_test.cpp.s
+
+.PHONY : src/prediction_test.s
+
+# target to generate assembly for a file
+src/prediction_test.cpp.s:
+	$(MAKE) -f CMakeFiles/PredictionTest.dir/build.make CMakeFiles/PredictionTest.dir/src/prediction_test.cpp.s
+.PHONY : src/prediction_test.cpp.s
 
 src/transformLaserScan.o: src/transformLaserScan.cpp.o
 
@@ -1428,6 +1508,8 @@ help:
 	@echo "... install/local"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... PredictionTest"
+	@echo "... Evaluator"
 	@echo "... EKFSlam"
 	@echo "... LandmarkProcessor"
 	@echo "... TransformLaserScan"
@@ -1521,12 +1603,18 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... src/EKFslam.o"
-	@echo "... src/EKFslam.i"
-	@echo "... src/EKFslam.s"
+	@echo "... src/ekfSlam.o"
+	@echo "... src/ekfSlam.i"
+	@echo "... src/ekfSlam.s"
+	@echo "... src/evaluator.o"
+	@echo "... src/evaluator.i"
+	@echo "... src/evaluator.s"
 	@echo "... src/landmarkProcessing.o"
 	@echo "... src/landmarkProcessing.i"
 	@echo "... src/landmarkProcessing.s"
+	@echo "... src/prediction_test.o"
+	@echo "... src/prediction_test.i"
+	@echo "... src/prediction_test.s"
 	@echo "... src/transformLaserScan.o"
 	@echo "... src/transformLaserScan.i"
 	@echo "... src/transformLaserScan.s"

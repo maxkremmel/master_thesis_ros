@@ -5,7 +5,7 @@
   <arg name="kiss_icp" default="true" />
   <arg name="teleop" default="true" />
   <arg name="joy_teleop" default="false" />
-  <arg name="gui" default="true" />
+  <arg name="gui" default="false" />
   <arg name="rviz" default="true" />
   <arg name="gpu" default="true" />
   <arg name="x_pos" default="0" />
@@ -84,7 +84,17 @@
     output="screen" />
   <node name="LandmarkProcessor" type="LandmarkProcessor" pkg="master_thesis_kremmel"
     output="screen" />
-  <node name="EKFSlam" type="EKFSlam" pkg="master_thesis_kremmel" output="screen" />
+  <!-- <node name="LaserScanProcessor" type="LaserScanProcessor" pkg="master_thesis_kremmel"
+    output="screen" /> -->
+  <node name="EKFSlam" type="EKFSlam" pkg="master_thesis_kremmel" output="screen">
+    <param name="alpha1" value="0.001" />
+    <param name="alpha2" value="0.001" />
+    <param name="alpha3" value="0.001" />
+    <param name="alpha4" value="0.001" />
+  </node>
+  <node name="Evaluator" type="Evaluator" pkg="master_thesis_kremmel" output="screen" />
   <!-- <node name="PubToCmdVel" type="PubToCmdVel" pkg="master_thesis_kremmel" output="screen" /> -->
+
+  <!-- <node name="PredictionTest" type="PredictionTest" pkg="master_thesis_kremmel" output="screen" /> -->
 
 </launch>

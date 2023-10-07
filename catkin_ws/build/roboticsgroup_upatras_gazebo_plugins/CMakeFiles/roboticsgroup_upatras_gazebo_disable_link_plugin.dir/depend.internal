@@ -305,6 +305,7 @@ CMakeFiles/roboticsgroup_upatras_gazebo_disable_link_plugin.dir/src/disable_link
  /usr/include/ignition/math6/gz/math/Matrix3.hh
  /usr/include/ignition/math6/gz/math/Matrix4.hh
  /usr/include/ignition/math6/gz/math/Matrix6.hh
+ /usr/include/ignition/math6/gz/math/MecanumDriveOdometry.hh
  /usr/include/ignition/math6/gz/math/MovingWindowFilter.hh
  /usr/include/ignition/math6/gz/math/OrientedBox.hh
  /usr/include/ignition/math6/gz/math/PID.hh

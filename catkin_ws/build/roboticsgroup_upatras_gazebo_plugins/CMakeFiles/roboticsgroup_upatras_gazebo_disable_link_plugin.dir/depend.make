@@ -304,6 +304,7 @@ CMakeFiles/roboticsgroup_upatras_gazebo_disable_link_plugin.dir/src/disable_link
 CMakeFiles/roboticsgroup_upatras_gazebo_disable_link_plugin.dir/src/disable_link_plugin.cpp.o: /usr/include/ignition/math6/gz/math/Matrix3.hh
 CMakeFiles/roboticsgroup_upatras_gazebo_disable_link_plugin.dir/src/disable_link_plugin.cpp.o: /usr/include/ignition/math6/gz/math/Matrix4.hh
 CMakeFiles/roboticsgroup_upatras_gazebo_disable_link_plugin.dir/src/disable_link_plugin.cpp.o: /usr/include/ignition/math6/gz/math/Matrix6.hh
+CMakeFiles/roboticsgroup_upatras_gazebo_disable_link_plugin.dir/src/disable_link_plugin.cpp.o: /usr/include/ignition/math6/gz/math/MecanumDriveOdometry.hh
 CMakeFiles/roboticsgroup_upatras_gazebo_disable_link_plugin.dir/src/disable_link_plugin.cpp.o: /usr/include/ignition/math6/gz/math/MovingWindowFilter.hh
 CMakeFiles/roboticsgroup_upatras_gazebo_disable_link_plugin.dir/src/disable_link_plugin.cpp.o: /usr/include/ignition/math6/gz/math/OrientedBox.hh
 CMakeFiles/roboticsgroup_upatras_gazebo_disable_link_plugin.dir/src/disable_link_plugin.cpp.o: /usr/include/ignition/math6/gz/math/PID.hh

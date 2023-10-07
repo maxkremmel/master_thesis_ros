@@ -1,4 +1,0 @@
-Symlinking /home/max/master_thesis_ros/catkin_ws/devel/share/kiss_icp/cmake/kiss_icpConfig.cmake
-Symlinking /home/max/master_thesis_ros/catkin_ws/devel/share/kiss_icp/cmake/kiss_icpConfig-version.cmake
-Symlinking /home/max/master_thesis_ros/catkin_ws/devel/lib/pkgconfig/kiss_icp.pc
-Symlinking /home/max/master_thesis_ros/catkin_ws/devel/lib/kiss_icp/odometry_node
